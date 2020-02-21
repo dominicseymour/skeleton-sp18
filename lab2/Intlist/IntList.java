@@ -109,6 +109,8 @@ public class IntList {
 
         // Create a new IntList
         IntList D = new IntList();
+
+        // Make a copy of the new IntList
         IntList E = D;
 
         // Go through the copy of A and set the new D IntList values and rests
