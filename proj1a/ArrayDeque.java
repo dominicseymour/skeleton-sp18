@@ -61,7 +61,8 @@ public class ArrayDeque<T> {
     public boolean isEmpty() {
         if (size == 0) {
             return true;
-        } return false;
+        }
+        return false;
     }
 
     /** Returns the number of items in the list. */
@@ -80,7 +81,8 @@ public class ArrayDeque<T> {
         System.out.println();
     }
 
-    /** Removes and returns the item at the front of the deque. If no such item exists, returns null. */
+    /** Removes and returns the item at the front of the deque.
+     * If no such item exists, returns null. */
     public T removeFirst() {
 
         updateUsageRatio();

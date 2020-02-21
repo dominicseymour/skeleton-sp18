@@ -130,7 +130,5 @@ public class LinkedListDequeTest {
 		deque.removeLast();
 		deque.removeLast();
 		deque.removeLast();
-
-
 	}
 } 

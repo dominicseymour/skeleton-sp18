@@ -5,9 +5,9 @@ public class LinkedListDeque<T> {
 
     private class Node {
 
-        public T item;
-        public Node previous;
-        public Node next;
+        private T item;
+        private Node previous;
+        private Node next;
 
         public Node(Node previous, T item, Node next) {
 
@@ -19,7 +19,7 @@ public class LinkedListDeque<T> {
 
     public LinkedListDeque() {
 
-        this.sentinel = new Node(null, null, null );
+        this.sentinel = new Node(null, null, null);
         this.sentinel.previous = this.sentinel;
         this.sentinel.next = this.sentinel;
         this.size = 0;
@@ -65,7 +65,7 @@ public class LinkedListDeque<T> {
 
     public int size() {
 
-         return this.size;
+        return this.size;
     }
 
     public void printDeque() {
