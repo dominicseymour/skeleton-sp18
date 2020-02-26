@@ -16,7 +16,8 @@ public class Palindrome {
         return characterDeque;
     }
 
-    /** The isPalindrome method should return true if the given word is a palindrome, and false otherwise.
+    /** The isPalindrome method should return true
+     * if the given word is a palindrome, and false otherwise.
      */
     public boolean isPalindrome(String word) {
 
@@ -35,7 +36,8 @@ public class Palindrome {
         return true;
     }
 
-    /** The method will return true if the word is a palindrome according to the character comparison test provided by
+    /** The method will return true if the word is a palindrome
+     * according to the character comparison test provided by
      * the CharacterComparator passed in as argument cc.
      *
      * */
