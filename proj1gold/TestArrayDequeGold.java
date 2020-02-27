@@ -5,46 +5,71 @@ import org.junit.Test;
 
 public class TestArrayDequeGold {
 
+    String message = "";
+
     @Test
     public void randomTest() {
 
         StudentArrayDeque<Integer> student = new StudentArrayDeque<>();
         ArrayDequeSolution<Integer> solution = new ArrayDequeSolution<>();
 
-        int i = 0;
-        String message = "";
         while (true) {
 
             double randomNumber = StdRandom.uniform();
 
             if (randomNumber < 0.25) {
-                student.addFirst(i);
-                solution.addFirst(i);
-                message += "\naddFirst(" + i + ")";
+                randomAddFirst(student, solution);
 
             } else if (randomNumber < 0.5) {
-                student.addLast(i);
-                solution.addLast(i);
-                message += "\naddLast(" + i + ")";
+                randomAddLast(student, solution);
 
             } else if (randomNumber < 0.75 && !student.isEmpty()) {
-                student.removeFirst();
-                solution.removeFirst();
-                message += "\nremoveFirst(" + i + ")";
+                randomRemoveFirst(student, solution);
 
             } else if (!student.isEmpty()) {
-                student.removeLast();
-                solution.removeLast();
-                message += "\nremoveLast(" + i + ")";
+                randomRemoveLast(student, solution);
             }
-
-            for (int j = 0; j < student.size(); j++) {
-
-                Assert.assertEquals(message, student.get(j), solution.get(j));
-            }
-
-            i++;
         }
 
+    }
+
+    private void randomAddFirst(StudentArrayDeque<Integer> student, ArrayDequeSolution<Integer> solution) {
+
+        Integer randomNumber = StdRandom.uniform(9);
+
+        student.addFirst(randomNumber);
+        solution.addFirst(randomNumber);
+
+        message += "\naddFirst(" + randomNumber + ")";
+    }
+
+    private void randomAddLast(StudentArrayDeque<Integer> student, ArrayDequeSolution<Integer> solution) {
+
+        Integer randomNumber = StdRandom.uniform(9);
+
+        student.addLast(randomNumber);
+        solution.addLast(randomNumber);
+
+        message += "\naddLast(" + randomNumber + ")";
+    }
+
+    private void randomRemoveFirst(StudentArrayDeque<Integer> student, ArrayDequeSolution<Integer> solution) {
+
+        Integer actual = student.removeFirst();
+        Integer expected = solution.removeFirst();
+
+        message += "\nremoveFirst()";
+
+        Assert.assertEquals(message, expected, actual);
+    }
+
+    private void randomRemoveLast(StudentArrayDeque<Integer> student, ArrayDequeSolution<Integer> solution) {
+
+        Integer actual = student.removeLast();
+        Integer expected = solution.removeLast();
+
+        message += "\nremoveLast()";
+
+        Assert.assertEquals(message, expected, actual);
     }
 }
